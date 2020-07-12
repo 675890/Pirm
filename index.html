@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="stylesheet" type="text/css" href="bs/css/boostrap.min.css">
+  <link rel="stylesheet" type="text/css" href="bs/css/boostrap-theme.min.css">
+  <title>Page Title</title>
+
+
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Register
+          
+        </div>
+        <div class="panel-body">
+            <form id="form">
+          <div class="form-group">
+            <input type="email" name="email" class="form control">
+            
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" class="form control">
+        </div>
+        <hr>
+        <div class="form-group">
+          <button type="button" id="send" class="btn btn-default">send</button>
+          
+        </div>
+        </form>
+      </div>
+      
+    </div>
+    
+  </div>
+  
+</div>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="bs/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $("#send").click(function(){
+      var form=$("#form").serialize();
+
+      console.log(form);
+
+      $.post("http://localhost/pirm/index.php" ,form,function(response) {
+        alert(response);
+        
+      })
+    });
+
+
+
+
+</script>
+</body>
+</html>
